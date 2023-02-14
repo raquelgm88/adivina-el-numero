@@ -29,15 +29,16 @@ function getNumber() {
 }
 
 function checkNumber(userNumber) {
-    if(userNumber > max) {
-        clueElement.innerHTML = 'El número debe estar entre 1 y ' + max;
+    console.log(userNumber +' ' + randomNumber)
+    if(userNumber > randomNumber) {
+       clueElement.innerHTML = 'Demasiado alto';
     }else if(userNumber < randomNumber) {
         clueElement.innerHTML = 'Demasiado bajo';
-    }else if(userNumber == randomNumber) {
+    }else if(userNumber === randomNumber) {
         clueElement.innerHTML = '¡¡¡Has ganado campeona!!!';
-    }else if(userNumber > randomNumber) {
-        clueElement.innerHTML = 'Demasiado alto';
-     }
+    }else if(userNumber > max) {
+        clueElement.innerHTML = 'El número debe estar entre 1 y ' + max;
+    }
 }
 
 

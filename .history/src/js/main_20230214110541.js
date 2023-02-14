@@ -33,7 +33,7 @@ function checkNumber(userNumber) {
         clueElement.innerHTML = 'El número debe estar entre 1 y ' + max;
     }else if(userNumber < randomNumber) {
         clueElement.innerHTML = 'Demasiado bajo';
-    }else if(userNumber == randomNumber) {
+    }else if(userNumber === randomNumber) {
         clueElement.innerHTML = '¡¡¡Has ganado campeona!!!';
     }else if(userNumber > randomNumber) {
         clueElement.innerHTML = 'Demasiado alto';

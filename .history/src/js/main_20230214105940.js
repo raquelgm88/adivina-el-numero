@@ -10,7 +10,6 @@ const button = document.querySelector('.js__button');
 const numberElement = document.querySelector('.js__input');
 const clueElement = document.querySelector('.js__clue');
 const counterElement = document.querySelector('.js__counter');
-
 let counter = 0;
 let randomNumber = 0;
 const max = 100;
@@ -29,15 +28,15 @@ function getNumber() {
 }
 
 function checkNumber(userNumber) {
-    if(userNumber > max) {
-        clueElement.innerHTML = 'El número debe estar entre 1 y ' + max;
+    if(userNumber > randomNumber) {
+       clueElement.innerHTML = 'Demasiado alto';
     }else if(userNumber < randomNumber) {
         clueElement.innerHTML = 'Demasiado bajo';
-    }else if(userNumber == randomNumber) {
+    }else if(userNumber === randomNumber) {
         clueElement.innerHTML = '¡¡¡Has ganado campeona!!!';
-    }else if(userNumber > randomNumber) {
-        clueElement.innerHTML = 'Demasiado alto';
-     }
+    }else if(userNumber > max) {
+        clueElement.innerHTML = 'El número debe estar entre 1 y ' + max;
+    }
 }
 
 
@@ -47,8 +46,7 @@ function handleClickButton(event) {
     event.preventDefault();
     const number = getNumber();
     checkNumber(number);
-    counter++;
-    counterElement.innerHTML(counter);
+
 }
 
 
