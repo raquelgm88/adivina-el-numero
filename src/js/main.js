@@ -47,7 +47,7 @@ function clueText(clue) {
 function checkNumber(userNumber) {
   if (userNumber === '') {
     clueText('Número de intentos: 0');
-  }else if(userNumber > max) {
+  }else if(userNumber > max || userNumber < 1) {
     clueText('El número debe estar entre 1 y ' + max);
   }else if(userNumber < randomNumber) {
     clueText('Demasiado bajo');
