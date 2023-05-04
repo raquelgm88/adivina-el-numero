@@ -1,7 +1,3 @@
-# README EN DESARROLLO
-
-![Adivina el número](https://raw.githubusercontent.com/raquelgm88/cocktail-finder/main/src/images/header-readme.png)
-
 # Juego - Adivina el número
 
 ¡Hola! Esta web es el resultado del ejercicio de evaluación intermedia del módulo dos del **Bootcamp de Programación Web** de **Adalab**, de la promoción **Salas**.
@@ -21,14 +17,19 @@ El juego consiste en que la aplicación genera un número al azar entre 1 y 100 
    - Cuando el jugador no introduzca un número válido y pulse en Prueba: **El número debe estar entre 1 y 100**.
 - En la parte inferior debe aparecer el número de veces que se ha pulsado el botón **Prueba**.
 
+## Requisitos
+
+Para realizar una versión sencilla del juego tenía que realizar las siguientes funcionalidades desde JavaScript:
+
+1. Crear una maquetación mínima con el input, el botón, el espacio para pistas y el espacio para el contador de intentos.
+2. Generar un número aleatorio con la ayuda de **Math.random** y **Math.ceil**.
+3. Mostrar en consola el número aleatorio generado para poder saber qué número se ha generado y poder hacer pruebas.
+4. Al pulsar el botón **Prueba**, acceder al contenido del input y mostrarlo en la consola.
+5. Comparar el número que el jugador ha escrito en el input con el número aleatorio, y pintar las pistas correspondientes en la pantalla.
+6. Actualizar el contador de intentos cada vez que el jugador pruebe.
 
 ## Herramientas utilizadas
 
 - HTML5
 - CSS3, SCSS
 - JavaScript
--
-
-## Cómo arrancar el proyecto
-
-
