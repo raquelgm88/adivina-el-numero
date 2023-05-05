@@ -33,3 +33,30 @@ Para realizar una versión sencilla del juego tenía que realizar las siguientes
 - HTML5
 - CSS3, SCSS
 - JavaScript
+- NodeJS
+- Gulp
+- Git
+
+## Cómo arrancar el proyecto
+
+Necesitas tener instalado [Node JS](https://nodejs.org/en) para poder arrancar este proyecto.
+
+1. Instala las dependecias locales ejecutando en la terminal el comando:
+
+```
+npm install
+```
+
+2. Instala el paquete para SASS:
+
+```
+npm install node-sass
+```
+
+3. Arranca el proyecto ejecutando a continuación en la terminal:
+
+```
+npm start
+```
+
+Se abrirá [http://localhost:3000 ](http://localhost:3000)para ver el proyecto en el navegador en modo desarrollo.
