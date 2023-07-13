@@ -1,7 +1,19 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .clue {
     border: solid 2px black;
 }
 
 .counter {
     border: solid 2px black;
+}
+
+.hidden {
+    display: none;
 }

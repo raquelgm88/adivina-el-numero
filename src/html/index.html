@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Evaluación intermedia 2</title>
+    <title>Adivina el número</title>
     <link
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
@@ -12,23 +12,34 @@
   </head>
 
   <body>
-    <main>
-      <h1>Adivina el número</h1>
-      <form action="#" class="form">
-        <label for="number" class="number js__number"
-          >Introduce aquí tu número</label
-        >
-        <input
-          type="number"
-          name="number"
-          id="number"
-          value=""
-          class="input_number js__input"
-        />
-        <button type="button" class="button js__button">Prueba</button>
-      </form>
-      <p class="clue js__clue">Pista: Escribe el número y dale a Prueba</p>
-      <p class="counter js__counter">Número de intentos: 0</p>
+    <main class="main js__main">
+      <h1 class="main__title">ADIVINA EL NÚMERO</h1>
+      <h2 class="main__subtitle">
+        Adivina el número en el que está pensando Genio.
+      </h2>
+      <h3 class="main__rulesTitle js__rulesTitle">Aquí tienes las reglas:</h3>
+      <div class="main__rulesContainer js__rulesContainer">
+        <article class="main__rulesContainer-rule">
+          1. El número está comprendido entre el 1 y el 100.
+        </article>
+        <article class="main__rulesContainer-rule">
+          2. Escribe el número que creas correcto en el recuadro y haz click en
+          "Prueba".
+        </article>
+        <article class="main__rulesContainer-rule">
+          3. Si no es el correcto, recibirás una pista. Pero si lo aciertas,
+          Genio te lo hará saber.
+        </article>
+        <article class="main__rulesContainer-rule">
+          4. Tendrás un contador para saber en cuántos intentos adivinas el
+          número. Además podrás consultar tus récords de otras partidas.
+        </article>
+        <article class="main__rulesContainer-rule">
+          5. Y por último, si quieres volver a empezar el juego antes de
+          adivinar el número, haz click en "Volver a empezar".
+        </article>
+      </div>
+      <button type="button" class="main__button js__play">JUGAR</button>
     </main>
     <script src="./assets/js/main.js"></script>
   </body>
