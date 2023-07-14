@@ -2,6 +2,7 @@
 
 //VARIABLES
 
+//Objeto que me servirá para crear las variables
 const identifiers = {
   rules : [
     '.js__rulesTitle',
@@ -11,7 +12,9 @@ const identifiers = {
   input: '.js__input',
   counterElement: '.js__counter',
   clueElement: '.js__clue',
-  main: '.js__main'
+  main: '.js__main',
+  score: '.js__score',
+  welcome: '.js__welcome'
 };
 let counter = 0;
 let randomNumber = 0;
@@ -29,9 +32,26 @@ function hidden () {
   });
 }
 
+//Función para no repetir querySelector y usar el objeto para establecer variables
 function getElement (element) {
   return document.querySelector(element);
 }
+
+//Función pra crear mensaje de bienvenida
+function welcomeMsg () {
+  const welcome = getElement(identifiers.welcome);
+  let times = localStorage.getItem('times');
+  if (times === null) {
+    welcome.innerHTML = '¡Bienvenido/a a "Adivina el número"!';
+    times = 1;
+  }else {
+    times++;
+    welcome.innerHTML = `¡Bienvenido/a de nuevo! Esta es tu visita número ${times}`;
+  }
+  localStorage.setItem('times', times);
+}
+
+welcomeMsg();
 
 //Función para pintar el HTML del juego
 function renderGame () {
@@ -134,7 +154,7 @@ function checkNumber(userNumber) {
 }
 
 
-//EVENTO
+//EVENTOS
 
 function handleClickPlayButton (event) {
   event.preventDefault();
@@ -165,4 +185,4 @@ function handleClickReset(event) {
   checkNumber();
 }
 
-document.querySelector(identifiers.play).addEventListener('click', handleClickPlayButton);
+getElement(identifiers.play).addEventListener('click', handleClickPlayButton);
