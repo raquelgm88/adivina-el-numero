@@ -1,32 +1,29 @@
-# Juego - Adivina el número
+# Juego - Adivina el Número
 
-¡Hola! Esta web es el resultado del ejercicio de evaluación intermedia del módulo dos del **Bootcamp de Programación Web** de **Adalab**, de la promoción **Salas**.
+> Nota: Proyecto en desarrollo.
+
+¡Hola! Bienvenido/a a mi pequeño juego **Adivina el Número**. Te invito a que eches un vistazo a mi repositorio, y también a que accedas al enlace de la página web y lo pruebes.
 
 ## En qué consiste
 
-El juego consiste en que la aplicación genera un número al azar entre 1 y 100 y el jugador tiene que adivinarlo. El juego da pistas sobre si el número que prueba es demasiado alto o bajo, y va contabilizando el número de intentos. Hasta que al final el jugador acierta el número. Si el jugador quiere adivinar otro número, deberá volver a cargar la página.
+Al entrar en la web veremos un mensaje de bienvenida que será diferente en función de las veces que hayamos entrado en ella. Además aparecen las reglas e instrucciones del juego para los usuarios. Haremos click en el botón **Jugar** para acceder al juego.
+
+Una vez dentro del juego, la aplicación genera un número al azar entre 1 y 100 (se muestra en la consola para comprobar que la función lo genera correctamente) y tenemos que adivinarlo. El juego da pistas sobre si el número que probamos es demasiado alto o bajo, y va contabilizando el número de intentos. Hasta que al final acertemos el número.
 
 ## Cómo funciona
 
-- En la parte superior, el jugador introduce un número y da al botón de **Prueba**.
+- Se almacena en el Local Storage las veces que un usuario entra en la página web, de esta manera se muestra un mensaje de bienvenida indicando este dato.
+- Haciendo click en **Jugar**, desaparecen las reglas y se pinta el juego.
+- El jugador introduce un número en el input y da al botón de **Comprobar**.
 - Debajo, en el apartado de **Pista** aparecen los siguientes textos:
-   - Al arrancar la página: **Escribe el número y dale a Prueba**.
-   - Cuando el jugador introduzca un número mayor que el aleatorio y pulse en Prueba: **Demasiado alto**.
-   - Cuando el jugador introduzca un número menor que el aleatorio y pulse en Prueba: **Demasiado bajo**.
-   - Cuando el jugador introduzca un número igual que el aleatorio y pulse en Prueba: **¡¡¡Has ganado campeona!!!**
-   - Cuando el jugador no introduzca un número válido y pulse en Prueba: **El número debe estar entre 1 y 100**.
-- En la parte inferior debe aparecer el número de veces que se ha pulsado el botón **Prueba**.
-
-## Requisitos
-
-Para realizar una versión sencilla del juego tenía que realizar las siguientes funcionalidades desde JavaScript:
-
-1. Crear una maquetación mínima con el input, el botón, el espacio para pistas y el espacio para el contador de intentos.
-2. Generar un número aleatorio con la ayuda de **Math.random** y **Math.ceil**.
-3. Mostrar en consola el número aleatorio generado para poder saber qué número se ha generado y poder hacer pruebas.
-4. Al pulsar el botón **Prueba**, acceder al contenido del input y mostrarlo en la consola.
-5. Comparar el número que el jugador ha escrito en el input con el número aleatorio, y pintar las pistas correspondientes en la pantalla.
-6. Actualizar el contador de intentos cada vez que el jugador pruebe.
+  - Al arrancar la página: **Escribe un número y haz click en "Comprobar"**.
+  - Cuando el jugador introduzca un número mayor que el aleatorio y pulse en Prueba: **Demasiado alto**.
+  - Cuando el jugador introduzca un número menor que el aleatorio y pulse en Prueba: **Demasiado bajo**.
+  - Cuando el jugador introduzca un número igual que el aleatorio y pulse en Prueba: **¡¡¡Has acertado!!!**
+  - Cuando el jugador no introduzca un número válido y pulse en Prueba: **El número debe estar entre 1 y 100**.
+  - En la parte inferior aparece un mensaje indicando el número de intentos.
+- Si se quiere adivinar otro número, se puede hacer click en el botón **Volver a empezar** o recargar la página.
+- Además, si se hace click en la tecla _Intro_, el juego se recarga igualmente.
 
 ## Herramientas utilizadas
 

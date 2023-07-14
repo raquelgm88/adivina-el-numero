@@ -42,11 +42,11 @@ function welcomeMsg () {
   const welcome = getElement(identifiers.welcome);
   let times = localStorage.getItem('times');
   if (times === null) {
-    welcome.innerHTML = '¡Bienvenido/a a "Adivina el número"!';
+    welcome.innerHTML = '¡Bienvenido/a a "Adivina el Número"!';
     times = 1;
   }else {
     times++;
-    welcome.innerHTML = `¡Bienvenido/a de nuevo! Esta es tu visita número ${times}`;
+    welcome.innerHTML = `¡Bienvenido/a de nuevo! Esta es tu visita nº ${times}`;
   }
   localStorage.setItem('times', times);
 }

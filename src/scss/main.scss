@@ -1,8 +1,26 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 10vh;
+
+    &__title {
+        font-size: 20px;
+    }
+}
+
 .main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+
+    &__title {
+        text-align: center;
+    }
 }
 
 
