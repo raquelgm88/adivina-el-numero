@@ -2,22 +2,17 @@
 
 //VARIABLES
 
-// const rulesTitle = document.querySelector('.js__rulesTitle');
-// const rulesContainer = document.querySelector('.js__rulesContainer');
-// const playButton = document.querySelector('.js__play');
-
 const identifiers = {
   rules : [
     '.js__rulesTitle',
     '.js__rulesContainer'
   ],
-  play: '.js__play'
+  play: '.js__play',
+  input: '.js__input',
+  counterElement: '.js__counter',
+  clueElement: '.js__clue',
+  main: '.js__main'
 };
-const button = document.querySelector('.js__button');
-const numberElement = document.querySelector('.js__input');
-const clueElement = document.querySelector('.js__clue');
-const counterElement = document.querySelector('.js__counter');
-
 let counter = 0;
 let randomNumber = 0;
 const max = 100;
@@ -30,13 +25,17 @@ function hidden () {
   const hiddenTag = [...identifiers.rules, identifiers.play];
 
   hiddenTag.forEach(element => {
-    document.querySelector(element).classList.add('hidden');
+    getElement(element).classList.add('hidden');
   });
+}
+
+function getElement (element) {
+  return document.querySelector(element);
 }
 
 //Función para pintar el HTML del juego
 function renderGame () {
-  const main = document.querySelector('.js__main');
+  const main = getElement(identifiers.main);
   const section = document.createElement('section');
   section.setAttribute('class', 'game js__game');
   main.appendChild(section);
@@ -67,6 +66,15 @@ function renderGame () {
   const buttonContent = document.createTextNode('Comprobar');
   newButton.appendChild(buttonContent);
   form.appendChild(newButton);
+  newButton.addEventListener('click', handleClickButton);
+
+  const resetBtn = document.createElement('button');
+  resetBtn.setAttribute('type', 'reset');
+  resetBtn.setAttribute('class', 'game__form-reset js__reset');
+  const resetContent = document.createTextNode('Volver a empezar');
+  resetBtn.appendChild(resetContent);
+  form.appendChild(resetBtn);
+  resetBtn.addEventListener('click', handleClickReset);
 
   const clue = document.createElement('p');
   clue.setAttribute('class', 'game__clue js__clue');
@@ -97,12 +105,14 @@ randomNumberPainted();
 
 //Función para extraer el número que escribe el usuario
 function getNumber() {
+  const numberElement = getElement(identifiers.input);
   const userNumber = parseInt(numberElement.value);
   return userNumber;
 }
 
 //Función para pintar el HTML en el clueElement
 function clueText(clue) {
+  const clueElement = getElement(identifiers.clueElement);
   clueElement.innerHTML = clue;
 }
 
@@ -115,11 +125,14 @@ function checkNumber(userNumber) {
   }else if(userNumber < randomNumber) {
     clueText('Demasiado bajo');
   }else if(userNumber === randomNumber) {
-    clueText('¡¡¡Has ganado campeona!!!');
+    clueText('¡¡¡Has acertado!!!');
   }else if(userNumber > randomNumber) {
     clueText('Demasiado alto');
+  }else if(isNaN(userNumber)) {
+    clueText('Debes introducir un número');
   }
 }
+
 
 //EVENTO
 
@@ -134,9 +147,22 @@ function handleClickButton(event) {
   const number = getNumber();
   checkNumber(number);
   counter++;
+  const counterElement = getElement(identifiers.counterElement);
   counterElement.innerHTML = 'Número de intentos: ' + counter;
 }
 
-document.querySelector(identifiers.play).addEventListener('click', handleClickPlayButton);
+function handleClickReset(event) {
+  event.preventDefault();
+  getRandomNumber(max);
+  randomNumber = getRandomNumber(max);
+  randomNumberPainted ();
+  const input = getElement(identifiers.input);
+  input.value = '';
+  counter = 0;
+  const counterElement = getElement(identifiers.counterElement);
+  counterElement.innerHTML = 'Número de intentos: ' + counter;
+  clueText();
+  checkNumber();
+}
 
-button.addEventListener('click', handleClickButton);
+document.querySelector(identifiers.play).addEventListener('click', handleClickPlayButton);
