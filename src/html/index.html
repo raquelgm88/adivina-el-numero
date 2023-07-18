@@ -8,40 +8,49 @@
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aladin&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
-  <header class="header">
-    <h1 class="header__title">ADIVINA EL NÚMERO</h1>
-  </header>
-  <body>
-    <main class="main js__main">
-      <h2 class="main__title">
+  <body class="body">
+    <header class="body__header">
+      <h1 class="body__header-title">ADIVINA EL NÚMERO</h1>
+    </header>
+
+    <main class="body__main js__main">
+      <p class="body__main-welcome js__welcome"></p>
+      <h2 class="body__main-title">
         Adivina el número en el que está pensando Genio.
       </h2>
-      <p class="main__welcome js__welcome"></p>
-      <h3 class="main__rulesTitle js__rulesTitle">Aquí tienes las reglas:</h3>
-      <div class="main__rulesContainer js__rulesContainer">
-        <article class="main__rulesContainer-rule">
+      <h3 class="body__main-rulesTitle js__rulesTitle">
+        Aquí tienes las reglas:
+      </h3>
+      <div class="body__main-rulesContainer js__rulesContainer">
+        <article class="body__main-rulesContainer--rule">
           1. El número está comprendido entre el 1 y el 100.
         </article>
-        <article class="main__rulesContainer-rule">
+        <article class="body__main-rulesContainer--rule">
           2. Escribe el número que creas correcto en el recuadro y haz click en
           "Prueba".
         </article>
-        <article class="main__rulesContainer-rule">
+        <article class="body__main-rulesContainer--rule">
           3. Si no es el correcto, recibirás una pista. Pero si lo aciertas,
           Genio te lo hará saber.
         </article>
-        <article class="main__rulesContainer-rule">
+        <article class="body__main-rulesContainer--rule">
           4. Tendrás un contador para saber en cuántos intentos adivinas el
           número.
         </article>
-        <article class="main__rulesContainer-rule">
+        <article class="body__main-rulesContainer--rule">
           5. Y por último, si quieres volver a empezar el juego antes de
           adivinar el número, haz click en "Volver a empezar".
         </article>
       </div>
-      <button type="button" class="main__button js__play">JUGAR</button>
+      <button type="button" class="body__main-button js__play">JUGAR</button>
     </main>
     <script src="./assets/js/main.js"></script>
   </body>
